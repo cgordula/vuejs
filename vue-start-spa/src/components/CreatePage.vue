@@ -87,5 +87,18 @@ export default {
         (this.published = true);
     },
   },
+  watch: {
+    pageTitle(newTitle, oldTitle) {
+      if (this.linkText === oldTitle) {
+        this.linkText = newTitle;
+      }
+    },
+  },
 };
 </script>
+
+<!-- computed properties - simply return a value. They used the existing data in order to compute a value that is then used in our template. It does not make any change to our state or does not mutate at all.
+It simply computes a value based upon the current data.
+-->
+
+<!-- watcher properties - watch for a property to change and it gives us the ability to make changes to our state and allow us to mutate our state.  -->
