@@ -7,7 +7,19 @@
 
 <script>
 export default {
-  props: ['page'],
+  // props: ['page'],
+  // another approach if you have a component that has a lot of different props using object
+  props: {
+    page: {
+      types: Object,
+      default() {
+        return {
+          pageTitle: '',
+          content: '',
+        };
+      },
+    },
+  },
 };
 </script>
 
