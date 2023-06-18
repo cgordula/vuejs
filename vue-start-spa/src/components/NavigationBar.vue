@@ -45,6 +45,9 @@ export default {
   components: {
     NavbarLink,
   },
+  created() {
+    this.getThemeSetting();
+  },
   props: ['pages', 'activePage', 'navLinkClick'],
   data() {
     return {
@@ -53,7 +56,26 @@ export default {
   },
   methods: {
     changeTheme() {
-      this.theme = this.theme === 'light' ? 'dark' : 'light';
+      // this.theme = this.theme === 'light' ? 'dark' : 'light';
+
+      let theme = 'light';
+
+      if (this.theme == 'light') {
+        theme = 'dark';
+      }
+
+      this.theme = theme;
+      this.storeThemeSetting();
+    },
+    storeThemeSetting() {
+      localStorage.setItem('theme', this.theme);
+    },
+    getThemeSetting() {
+      let theme = localStorage.getItem('theme');
+
+      if (theme) {
+        this.theme = theme;
+      }
     },
   },
 };
