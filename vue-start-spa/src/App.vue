@@ -19,6 +19,7 @@
 
 <script>
 /* eslint-disable */
+//  this is how to disable eslint when you registered a component but not used ex. page-viewer
 import NavigationBar from './components/NavigationBar.vue';
 import PageViewer from './components/PageViewer.vue';
 import CreatePage from './components/CreatePage.vue';
